@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B4C50097-0495-417D-B0BA-6E97ED2F1C69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.Income.LambdaProcessReceived", "main\JacksonVeroneze.Income.LambdaProcessReceived\JacksonVeroneze.Income.LambdaProcessReceived.csproj", "{82754E11-8897-4E1B-8DE2-889053FE0FEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{0E53ADE6-8B8E-4960-936B-78EB4C89BEAF}"
+	ProjectSection(SolutionItems) = preProject
+		..\infra\terraform\main.tf = ..\infra\terraform\main.tf
+		..\infra\terraform\variables.tf = ..\infra\terraform\variables.tf
+		..\infra\terraform\provider.tf = ..\infra\terraform\provider.tf
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82754E11-8897-4E1B-8DE2-889053FE0FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82754E11-8897-4E1B-8DE2-889053FE0FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82754E11-8897-4E1B-8DE2-889053FE0FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82754E11-8897-4E1B-8DE2-889053FE0FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{82754E11-8897-4E1B-8DE2-889053FE0FEC} = {B4C50097-0495-417D-B0BA-6E97ED2F1C69}
+	EndGlobalSection
+EndGlobal

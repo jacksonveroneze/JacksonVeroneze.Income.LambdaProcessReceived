@@ -18,6 +18,6 @@ module "lambda" {
   environment_variables = var.environment_variables
   enable_xray           = var.enable_xray
   event_source_enabled  = true
-  event_source_arn      = data.aws_ssm_parameter.ssm_queue_incomes_received_arn.value
+  event_source_arn      = data.aws_ssm_parameter.ssm_queue_attach_arn.value
   custom_tags           = var.tags
 }

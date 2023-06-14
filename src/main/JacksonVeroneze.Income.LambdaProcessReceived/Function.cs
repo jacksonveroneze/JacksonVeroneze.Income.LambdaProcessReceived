@@ -24,19 +24,26 @@ public class Function
     /// <param name="evnt"></param>
     /// <param name="context"></param>
     /// <returns></returns>
-    public async Task FunctionHandler(SQSEvent evnt, ILambdaContext context)
+    public async Task FunctionHandler(SQSEvent evnt, 
+        ILambdaContext context)
     {
-        var tasks = evnt.Records
+        IEnumerable<Task> tasks = evnt.Records
             .Select(evt => ProcessMessageAsync(evt, context));
 
         await Task.WhenAll(tasks);
     }
 
-    private async Task ProcessMessageAsync(SQSEvent.SQSMessage message, ILambdaContext context)
+    private async Task ProcessMessageAsync(
+        SQSEvent.SQSMessage message, 
+        ILambdaContext context)
     {
         context.Logger.LogInformation($"Processed message {message.Body}");
 
-        // TODO: Do interesting work based on the new message
+        if(message.Body.Contains("Error", StringComparison.OrdinalIgnoreCase))
+        {
+            throw new Exception("Message contains word error");
+        }
+
         await Task.CompletedTask;
     }
 }

@@ -9,9 +9,22 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.Income.Lamb
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{0E53ADE6-8B8E-4960-936B-78EB4C89BEAF}"
 	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE = ..\LICENSE
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{14DD6C4B-89AE-4D7B-8002-C3B57CD37620}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.Income.LambdaProcessReceived.UnitTests", "test\JacksonVeroneze.Income.LambdaProcessReceived.UnitTests\JacksonVeroneze.Income.LambdaProcessReceived.UnitTests.csproj", "{E3823532-656E-43B7-B6F1-530DEA0B41C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.Income.LambdaProcessReceived.Util", "test\JacksonVeroneze.Income.LambdaProcessReceived.Util\JacksonVeroneze.Income.LambdaProcessReceived.Util.csproj", "{3CD4981F-37B3-4C2E-BBC6-C4B98E420783}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{30198F56-F8FA-4636-8DA4-496EA6FA8467}"
+	ProjectSection(SolutionItems) = preProject
+		..\infra\terraform\data.tf = ..\infra\terraform\data.tf
 		..\infra\terraform\main.tf = ..\infra\terraform\main.tf
-		..\infra\terraform\variables.tf = ..\infra\terraform\variables.tf
 		..\infra\terraform\provider.tf = ..\infra\terraform\provider.tf
+		..\infra\terraform\variables.tf = ..\infra\terraform\variables.tf
 	EndProjectSection
 EndProject
 Global
@@ -27,8 +40,19 @@ Global
 		{82754E11-8897-4E1B-8DE2-889053FE0FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82754E11-8897-4E1B-8DE2-889053FE0FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82754E11-8897-4E1B-8DE2-889053FE0FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3823532-656E-43B7-B6F1-530DEA0B41C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3823532-656E-43B7-B6F1-530DEA0B41C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3823532-656E-43B7-B6F1-530DEA0B41C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3823532-656E-43B7-B6F1-530DEA0B41C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD4981F-37B3-4C2E-BBC6-C4B98E420783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD4981F-37B3-4C2E-BBC6-C4B98E420783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD4981F-37B3-4C2E-BBC6-C4B98E420783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD4981F-37B3-4C2E-BBC6-C4B98E420783}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{82754E11-8897-4E1B-8DE2-889053FE0FEC} = {B4C50097-0495-417D-B0BA-6E97ED2F1C69}
+		{E3823532-656E-43B7-B6F1-530DEA0B41C5} = {14DD6C4B-89AE-4D7B-8002-C3B57CD37620}
+		{3CD4981F-37B3-4C2E-BBC6-C4B98E420783} = {14DD6C4B-89AE-4D7B-8002-C3B57CD37620}
+		{30198F56-F8FA-4636-8DA4-496EA6FA8467} = {0E53ADE6-8B8E-4960-936B-78EB4C89BEAF}
 	EndGlobalSection
 EndGlobal

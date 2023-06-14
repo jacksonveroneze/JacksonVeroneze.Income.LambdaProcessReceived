@@ -1,41 +1,23 @@
-resource "aws_cloudwatch_log_group" "lambda_process_received" {
-  name              = "/aws/lambda/lambda_process_received"
-  retention_in_days = 1
-}
-
 resource "aws_s3_object" "lambda_zip" {
-  bucket = "incomes-lambdas-zip"
-  key    = "JacksonVeroneze.Income.LambdaProcessReceived.zip"
-  source = "../../src/main/JacksonVeroneze.Income.LambdaProcessReceived/bin/Release/net6.0/JacksonVeroneze.Income.LambdaProcessReceived.zip"
+  bucket = data.aws_ssm_parameter.code_s3_bucket_name.value
+  key    = data.aws_ssm_parameter.code_s3_bucket_key.value
+  source = var.code_path
 }
 
-resource "aws_lambda_function" "lambda_process_received" {
-  function_name                  = "LambdaProcessReceived"
-  role                           = data.aws_ssm_parameter.ssm_lambda_execution_role_arn.value
-  architectures                  = ["x86_64"]
-  description                    = "Lambda - ProcessReceived"
-  handler                        = "JacksonVeroneze.Income.LambdaProcessReceived::JacksonVeroneze.Income.LambdaProcessReceived.Function::FunctionHandler"
-  runtime                        = "dotnet6"
-  publish                        = true
-  timeout                        = 15
-  memory_size                    = 128
-  reserved_concurrent_executions = -1
-  s3_bucket                      = "incomes-lambdas-zip"
-  s3_key                         = aws_s3_object.lambda_zip.key
-  s3_object_version              = aws_s3_object.lambda_zip.version_id
-  environment {
-    variables = {
-      env = "dev"
-    }
-  }
-  tracing_config {
-    mode = "Active"
-  }
-  tags = var.tags
-}
-
-resource "aws_lambda_event_source_mapping" "aws_lambda_event" {
-  enabled          = true
-  event_source_arn = data.aws_ssm_parameter.ssm_queue_incomesreceived_arn.value
-  function_name    = aws_lambda_function.lambda_process_received.arn
+module "lambda" {
+  source                = "git@github.com:jacksonveroneze/JacksonVeroneze.Terraform.Modules.git//src/lambda?ref=development"
+  function_name         = var.function_name
+  description           = var.description
+  runtime               = var.runtime
+  handler               = var.handler
+  memory_size           = var.memory_size
+  timeout               = var.timeout
+  execution_role_arn    = data.aws_ssm_parameter.ssm_lambda_execution_role_arn.value
+  s3_bucket             = data.aws_ssm_parameter.code_s3_bucket_name.value
+  s3_key                = data.aws_ssm_parameter.code_s3_bucket_key.value
+  environment_variables = var.environment_variables
+  enable_xray           = var.enable_xray
+  event_source_enabled  = true
+  event_source_arn      = data.aws_ssm_parameter.ssm_queue_incomes_received_arn.value
+  custom_tags           = var.tags
 }

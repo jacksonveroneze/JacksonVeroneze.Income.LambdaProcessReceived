@@ -3,7 +3,7 @@
 ################################################################################
 
 variable "tags" {
-  type = map(string)
+  type    = map(string)
   default = {
     environment = "dev"
     feature     = "incomes"
@@ -50,7 +50,7 @@ variable "enable_xray" {
 }
 
 variable "environment_variables" {
-  type = map(string)
+  type    = map(string)
   default = {
     "parameter1" = "value"
     "parameter2" = "value"

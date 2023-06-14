@@ -20,4 +20,5 @@ module "lambda" {
   event_source_enabled  = true
   event_source_arn      = data.aws_ssm_parameter.ssm_queue_attach_arn.value
   custom_tags           = var.tags
+  depends_on            = [aws_s3_object.lambda_zip]
 }

@@ -33,6 +33,6 @@ public class FunctionTest
         // Assert
         // -------------------------------------------------------
         logger.Buffer.ToString().Should()
-            .Contain("Processed message");
+            .Contain("Status");
     }
 }

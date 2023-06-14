@@ -24,22 +24,49 @@ public class Function
     /// <param name="evnt"></param>
     /// <param name="context"></param>
     /// <returns></returns>
-    public async Task FunctionHandler(SQSEvent evnt, 
+    public async Task<SQSBatchResponse> FunctionHandler(
+        SQSEvent evnt,
         ILambdaContext context)
     {
-        IEnumerable<Task> tasks = evnt.Records
-            .Select(evt => ProcessMessageAsync(evt, context));
+        SQSBatchResponse response = new()
+        {
+            BatchItemFailures = new List<SQSBatchResponse.BatchItemFailure>()
+        };
 
-        await Task.WhenAll(tasks);
+        context.Logger.LogCritical($"Received Message of count {evnt.Records.Count}");
+
+        foreach (SQSEvent.SQSMessage message in evnt.Records)
+        {
+            try
+            {
+                await ProcessMessageAsync(message, context);
+            }
+            catch (Exception e)
+            {
+                context.Logger.LogError(e.Message);
+
+                response.BatchItemFailures.Add(new SQSBatchResponse.BatchItemFailure()
+                {
+                    ItemIdentifier = message.MessageId
+                });
+            }
+        }
+
+        int failures = response.BatchItemFailures.Count;
+        int success = evnt.Records.Count - failures;
+
+        context.Logger.LogCritical($"Status - Success: {success} - Error: {failures}");
+
+        return response;
     }
 
     private async Task ProcessMessageAsync(
-        SQSEvent.SQSMessage message, 
+        SQSEvent.SQSMessage message,
         ILambdaContext context)
     {
-        context.Logger.LogInformation($"Processed message {message.Body}");
+        context.Logger.LogInformation($"Process message ID: {message.MessageId}");
 
-        if(message.Body.Contains("Error", StringComparison.OrdinalIgnoreCase))
+        if (message.Body.Contains("Error", StringComparison.OrdinalIgnoreCase))
         {
             throw new Exception("Message contains word error");
         }

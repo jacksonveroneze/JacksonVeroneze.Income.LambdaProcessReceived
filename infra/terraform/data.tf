@@ -1,3 +1,7 @@
+data "aws_caller_identity" "current" {}
+
+data "aws_region" "current" {}
+
 data "aws_ssm_parameter" "ssm_lambda_execution_role_arn" {
   name = "/Incomes/Common/Lambda/LambdaExecutionRoleReadSQSArn"
 }

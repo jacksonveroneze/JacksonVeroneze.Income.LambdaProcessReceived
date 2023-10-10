@@ -1,5 +1,6 @@
 using Amazon.Lambda.TestUtilities;
 using Amazon.Lambda.SQSEvents;
+using JacksonVeroneze.Income.LambdaProcessReceived.App;
 using JacksonVeroneze.Income.LambdaProcessReceived.Util.Builders;
 
 namespace JacksonVeroneze.Income.LambdaProcessReceived.UnitTests;

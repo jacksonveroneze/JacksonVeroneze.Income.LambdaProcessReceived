@@ -11,5 +11,5 @@
   "function-runtime": "dotnet6",
   "function-memory-size": 128,
   "function-timeout": 18,
-  "function-handler": "JacksonVeroneze.Income.LambdaProcessReceived::JacksonVeroneze.Income.LambdaProcessReceived.Function::FunctionHandler"
+  "function-handler": "JacksonVeroneze.Income.LambdaProcessReceived.App::JacksonVeroneze.Income.LambdaProcessReceived.App.Function::FunctionHandler"
 }

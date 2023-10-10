@@ -33,7 +33,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\main\JacksonVeroneze.Income.LambdaProcessReceived\JacksonVeroneze.Income.LambdaProcessReceived.csproj"/>
+        <ProjectReference Include="..\..\main\JacksonVeroneze.Income.LambdaProcessReceived.App\JacksonVeroneze.Income.LambdaProcessReceived.App.csproj" />
         <ProjectReference Include="..\JacksonVeroneze.Income.LambdaProcessReceived.Util\JacksonVeroneze.Income.LambdaProcessReceived.Util.csproj"/>
     </ItemGroup>
 

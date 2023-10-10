@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B4C50097-0495-417D-B0BA-6E97ED2F1C69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.Income.LambdaProcessReceived", "main\JacksonVeroneze.Income.LambdaProcessReceived\JacksonVeroneze.Income.LambdaProcessReceived.csproj", "{82754E11-8897-4E1B-8DE2-889053FE0FEC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.Income.LambdaProcessReceived.App", "main\JacksonVeroneze.Income.LambdaProcessReceived.App\JacksonVeroneze.Income.LambdaProcessReceived.App.csproj", "{82754E11-8897-4E1B-8DE2-889053FE0FEC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{0E53ADE6-8B8E-4960-936B-78EB4C89BEAF}"
 	ProjectSection(SolutionItems) = preProject
@@ -26,6 +26,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{30198F56
 		..\infra\terraform\provider.tf = ..\infra\terraform\provider.tf
 		..\infra\terraform\variables.tf = ..\infra\terraform\variables.tf
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.Income.LambdaProcessReceived.Application", "main\JacksonVeroneze.Income.LambdaProcessReceived.Application\JacksonVeroneze.Income.LambdaProcessReceived.Application.csproj", "{1544510B-4E2E-40AC-B4BA-30334B1149AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.Income.LambdaProcessReceived.Domain", "main\JacksonVeroneze.Income.LambdaProcessReceived.Domain\JacksonVeroneze.Income.LambdaProcessReceived.Domain.csproj", "{84E06359-C2AD-41C4-908C-05676FDB30AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JacksonVeroneze.Income.LambdaProcessReceived.Infrastructure", "main\JacksonVeroneze.Income.LambdaProcessReceived.Infrastructure\JacksonVeroneze.Income.LambdaProcessReceived.Infrastructure.csproj", "{44CABAB7-7BC8-45B3-99A0-90F952723383}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,11 +54,26 @@ Global
 		{3CD4981F-37B3-4C2E-BBC6-C4B98E420783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CD4981F-37B3-4C2E-BBC6-C4B98E420783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CD4981F-37B3-4C2E-BBC6-C4B98E420783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1544510B-4E2E-40AC-B4BA-30334B1149AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1544510B-4E2E-40AC-B4BA-30334B1149AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1544510B-4E2E-40AC-B4BA-30334B1149AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1544510B-4E2E-40AC-B4BA-30334B1149AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84E06359-C2AD-41C4-908C-05676FDB30AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84E06359-C2AD-41C4-908C-05676FDB30AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84E06359-C2AD-41C4-908C-05676FDB30AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84E06359-C2AD-41C4-908C-05676FDB30AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44CABAB7-7BC8-45B3-99A0-90F952723383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44CABAB7-7BC8-45B3-99A0-90F952723383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44CABAB7-7BC8-45B3-99A0-90F952723383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44CABAB7-7BC8-45B3-99A0-90F952723383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{82754E11-8897-4E1B-8DE2-889053FE0FEC} = {B4C50097-0495-417D-B0BA-6E97ED2F1C69}
 		{E3823532-656E-43B7-B6F1-530DEA0B41C5} = {14DD6C4B-89AE-4D7B-8002-C3B57CD37620}
 		{3CD4981F-37B3-4C2E-BBC6-C4B98E420783} = {14DD6C4B-89AE-4D7B-8002-C3B57CD37620}
 		{30198F56-F8FA-4636-8DA4-496EA6FA8467} = {0E53ADE6-8B8E-4960-936B-78EB4C89BEAF}
+		{1544510B-4E2E-40AC-B4BA-30334B1149AB} = {B4C50097-0495-417D-B0BA-6E97ED2F1C69}
+		{84E06359-C2AD-41C4-908C-05676FDB30AB} = {B4C50097-0495-417D-B0BA-6E97ED2F1C69}
+		{44CABAB7-7BC8-45B3-99A0-90F952723383} = {B4C50097-0495-417D-B0BA-6E97ED2F1C69}
 	EndGlobalSection
 EndGlobal
